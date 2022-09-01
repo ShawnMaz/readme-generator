@@ -165,32 +165,21 @@ const questions = [{
         }
     }
 ];
-
-
-// prompt(questions)
-//     .then(response => {
-//         console.log(response);
-//     })
-
-// writeToFile('testFileName', 'testData')
-// .then(response => {
-//     console.log(response);
-// })
    
-// // function writes README file to the dist folder
-// function writeToFile(fileName, data) {
-//     return new Promise((resolve, reject) => {
-//         fs.writeFile(`./dist/${fileName}.md`, data, err =>{
-//             if(err){
-//                 reject(err);
-//                 return;
-//             } 
-//             resolve({
-//                 message: `${fileName} created successfully!`
-//             });
-//         });
-//     });    
-// };
+// function writes README file to the dist folder
+function writeToFile(fileName, data) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile(`./dist/${fileName}.md`, data, err =>{
+            if(err){
+                reject(err);
+                return;
+            } 
+            resolve({
+                message: `${fileName} created successfully!`
+            });
+        });
+    });    
+};
 
 // // function to initialize app
 // function init() {
