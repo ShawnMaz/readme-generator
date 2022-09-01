@@ -62,12 +62,12 @@ const questions = [{
     {
         type:'list',
         name:'license',
-        message: 'Please choose a license type from the list below (Default: GNU General Public License family): ',
+        message: 'Please choose a license type from the list below: ',
         // list of licenses acquired from https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository
         choices: [
             'Academic Free License v3.0 : afl-3.0',
             'Apache license 2.0 : apache-2.0',
-            'Artictic license 2.0 : artistic-2.0',
+            'Artistic license 2.0 : artistic-2.0',
             'Boost Software License 1.0 : bsl-1.0',
             'BSD 2-clause "Simplified" license : bsd-2-clause',
             'BSD 3-clause "New" or "Revised" license : bsd-3-clause',
@@ -99,9 +99,7 @@ const questions = [{
             'Universiity of Illinois/NCSA Open Source License : ncsa',
             'The Unlicense : unlicense',
             'zLib License : zlib'
-        ],
-        deafult: 'GNU General Public License v3.0 : gpl-3.0',
-
+        ]
     },
     {
         input:'input',
@@ -154,26 +152,13 @@ const questions = [{
                 return false;
             }
         }
-    },
-    {
-        input:'input',
-        name:'reachOut',
-        message:'Please enter the instructions for how others can reach out to you about your project (Required): ',
-        validate:function(reachOutInput){
-            if(reachOutInput){
-                return true;
-            } else {
-                console.log('Please enter valid intructions for reaching out to you!');
-                return false;
-            }
-        }
     }
 ];
    
 // function writes README file to the dist folder
 function writeToFile(fileName, data) {
     return new Promise((resolve, reject) => {
-        fs.writeFile(`./dist/${fileName}.md`, data, err =>{
+        fs.writeFile(`./dist/${fileName}`, data, err =>{
             if(err){
                 reject(err);
                 return;
@@ -192,7 +177,7 @@ function init() {
             return generateMarkdown(questionAnswers);
         })
         .then(data => {
-            return writeToFile('README', data);
+            return writeToFile('README.md', data);
         })
         .then (response => {
             console.log(response);

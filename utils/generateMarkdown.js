@@ -1,31 +1,56 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// creates the license badge
 function renderLicenseBadge(license) {
   const licenseKeyword = license.split(' : ');
   return`
-    [![License: ${licenseKeyword[1]}](https://img.shields.io/badge/${licenseKeyword[1]}.svg)]
+  ![License: ${licenseKeyword[1]}](https://img.shields.io/static/v1?label=license&message=${licenseKeyword[1]}&color=green)
   `;
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-// function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// creates the license section
 function renderLicenseSection(license) {
   const licenseKeyword = license.split(' : ');
   return `
-    ## License
-    This application is available under the ${licenseKeyword[0]} license.
+  ## License
+  This application is available under the ${licenseKeyword[0]} license.
   `;
 }
 
-// TODO: Create a function to generate markdown for README
+// generates the README markdown file's content
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `
+  # ${data.title}
+  ${renderLicenseBadge(data.license)}
 
-`;
+  ## Description
+  ${data.description}
+
+  ## Table of Contents
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contribution Guideline](#contribution-guideline)
+  * [Tests](#tests)
+  * [Questions](#questions)
+
+  ## Installation
+  ${data.installation}
+
+  ## Usage
+  ${data.usage}
+
+  ${renderLicenseSection(data.license)}
+
+  ## Contribution Guideline
+  ${data.contribution}
+
+  ## Tests
+  ${data.tests}
+
+  ## Questions
+  For any questions about the project, please don't hesitate to reach out.
+  * Link to my Github page : [${data.github}](https://github.com/${data.github})
+  * Email: [${data.email}](mailto:${data.email})
+  `;
 }
 
 module.exports = generateMarkdown;
