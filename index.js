@@ -181,22 +181,22 @@ function writeToFile(fileName, data) {
     });    
 };
 
-// // function to initialize app
-// function init() {
-//     prompt(questions)
-//         .then(questionAnswers => {
-//             return generateMarkdown(questionAnswers);
-//         })
-//         .then(data => {
-//             return writeToFile('README', data);
-//         })
-//         .then (response => {
-//             console.log(response);
-//         })
-//         .catch(err => {
-//             console.log(err);
-//         })
-// }
+// function to initialize app
+function init() {
+    prompt(questions)
+        .then(questionAnswers => {
+            return generateMarkdown(questionAnswers);
+        })
+        .then(data => {
+            return writeToFile('README', data);
+        })
+        .then (response => {
+            console.log(response);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
 
 // // Function call to initialize app
 // init();
