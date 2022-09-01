@@ -10,6 +10,7 @@
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
+  * [Walkthrough Video](#walkthrough-video)
   * [License](#license)
   * [Contributing](#contributing)
   * [Tests](#tests)
@@ -21,6 +22,8 @@
   ## Usage
   This application runs entirely in the terminal. To start using this application just type "node index.js" in the terminal and follow the prompts on the terminal.
 
+  ## Walkthrough Video
+  A walkthrough video of this application can be found [here](https://drive.google.com/file/d/1Th4gGpCGBU5F7Zc5D-gbqw5877O4-ZAd/view?usp=sharing).
   
   ## License
   This application is available under the GNU General Public License family license.
